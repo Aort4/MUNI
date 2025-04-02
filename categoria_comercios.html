@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/categoria_comercios.css">
+
+    <title>Comercios</title>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav containerr">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <img src="tenori_icon.png" alt="Perfil" id="logo">
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="dashboard.html" class="nav__link">Home</a></li>
+
+                    <li><a href="album_comercio.html" class="nav__link">Album</a></li>
+
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Comercios <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="comercios.html" class="dropdown__link">
+                                    <i class="ri-pie-chart-line"></i> Comercios
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="categoria_comercios.html" class="dropdown__link">
+                                    <i class="ri-arrow-up-down-line"></i> Categoria Comercios
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="album_comercio.html" class="dropdown__link">
+                                    <i class="ri-arrow-up-down-line"></i> Album Comercio
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--=============== DROPDOWN 2 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Eventos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="eventos.html" class="dropdown__link">
+                                    <i class="ri-user-line"></i> Eventos
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="noticias.html" class="dropdown__link">
+                                    <i class="ri-user-line"></i> Noticias
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="incidencias.html" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Incidencias
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="listado_incidencias.html" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Listado Incidencias
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <!--=============== DROPDOWN 3 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Usuarios <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="usuarios.html" class="dropdown__link">
+                                    <i class="ri-user-line"></i> Usuarios
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="roles.html" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Roles
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="permisos.html" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Permisos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--=============== Form ===============-->
+    <main>
+        <div class="cardBox">
+            <div class="card"  id="card">
+                <div class="wrapper" id="w">
+                    <h1>Agregar Categoria de Comercio</h1>
+                    <form id="addForm">
+                        <div class="Total">
+                            <div class="Columna1">
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="addCategoria"
+                                        placeholder="Nombre de la Categoria Comercio" required>
+                                    <i class='bx bxs-user'></i>
+                                </div>
+                            </div>
+                            <div class="Columna1">
+                                <button type="submit" class="btn" id="btn">Guardar</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--=============== Tabla ===============-->
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <!-- // id de la tabla para JS-->
+                    <table id="datatable_users" class="table">
+                        <thead>
+                            <tr>
+                                <th class="centered">#</th>
+                                <th class="centered">Nombre Comercio</th>
+                                <th class="centered">Opciones</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_users"> </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <!--=============== Modal ===============-->
+        <div id="Categoria_edit" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Categoría</h2>
+                <form id="categoria_frm">
+                    <input type="hidden" id="editId">
+                    <div class="mb-3">
+                        <label for="editCategoria" class="form-label">Nombre de la Categoría</label>
+                        <input type="text" class="form-control" id="editCategoria" required>
+                    </div>
+                    <button type="submit" class="btn-save">Guardar cambios</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <!--=============== MAIN JS ===============-->
+    <script src="js/main.js"></script>
+    <script src="js/categoria_comercios.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
