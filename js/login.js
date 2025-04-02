@@ -25,6 +25,10 @@ inputs.forEach(input=>{
 
 
 
+
+
+
+
 // Función para validar los campos del login
 function validarCamposLogin() {
   if (user.value === "" || pass.value === "") {
@@ -71,7 +75,7 @@ Button.addEventListener('click', async (e) => {
       // Si el login es exitoso, guardamos el token en localStorage
       localStorage.setItem('idusuario', result.user.id_usuario
       ); 
-      window.location.href = 'dashboard.html'; // Redirigir al dashboard
+      window.location.href = 'index.html'; // Redirigir al dashboard
     } else {
       alert("Usuario o contraseña incorrectos.");
     }
@@ -103,7 +107,7 @@ Button.addEventListener('click', async (e) => {
 //   };
 
 //   try {
-//     const response = await fetch('https://ppt-munic.onrender.com/api/usuarios/register', registerOptions);
+//     const response = await fetch('http://localhost:3000/api/usuarios/register', registerOptions);
 //     const data = await response.json();
 
 //     if (data.success) {
